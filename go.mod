@@ -1,4 +1,4 @@
-module logrite
+module github.com/yourpov/logrite
 
 go 1.24.0
 
