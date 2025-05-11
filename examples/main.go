@@ -1,7 +1,7 @@
 package main
 
 import (
-	logger "logrite/logrite"
+	logger "github.com/yourpov/logrite"
 )
 
 func main() {
@@ -32,5 +32,4 @@ func main() {
 	// ── Fully manual ────────────────────────────────────────
 
 	logger.Log("manual", " This is a manually made log\n", logger.BgWhite, logger.White)
-
 }
