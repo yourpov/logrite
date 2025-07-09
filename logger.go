@@ -95,13 +95,14 @@ func Log(tag, message string, bg, fg color.Attribute) {
 	logLine(tag, message, bg, fg)
 }
 
-func Custom(emoji, tag, message string, fg, bg color.Attribute) {
+func Custom(emoji, tag, format string, fg, bg color.Attribute, args ...any) {
 	displayTag := tag
 	if config.UppercaseTag {
 		displayTag = strings.ToUpper(tag)
 	}
 
 	label := fmt.Sprintf(" %-8s", displayTag)
+	message := fmt.Sprintf(format, args...)
 
 	if config.UseColors {
 		fmt.Println(emoji+" "+color.New(bg, fg).Sprint(label), message)
