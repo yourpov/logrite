@@ -112,25 +112,26 @@ func Custom(emoji, tag, message string, fg, bg color.Attribute) {
 
 // ── Generic Shortcuts ───────────────────────────
 
-func Info(msg string) {
-	logLine("info", msg, BgWhite, Black)
+func Info(msg string, args ...interface{}) {
+	logLine("info", fmt.Sprintf(msg, args...), BgWhite, Black)
 }
 
-func Warn(msg string) {
-	logLine("warn", msg, BgYellow, Black)
+func Warn(msg string, args ...interface{}) {
+	logLine("warn", fmt.Sprintf(msg, args...), BgYellow, Black)
 }
 
-func Error(msg string) {
-	logLine("error", msg, BgBrightRed, White)
+func Error(msg string, args ...interface{}) {
+	logLine("error", fmt.Sprintf(msg, args...), BgBrightRed, White)
 }
 
-func Success(msg string) {
-	logLine("success", msg, BgGreen, Black)
+func Success(msg string, args ...interface{}) {
+	logLine("success", fmt.Sprintf(msg, args...), BgGreen, Black)
 }
 
-func Debug(msg string) {
-	logLine("debug", msg, BgPink, White)
+func Debug(msg string, args ...interface{}) {
+	logLine("debug", fmt.Sprintf(msg, args...), BgPink, White)
 }
+
 
 // ── Example Custom Functions Below ────────────────────────────────────────
 
