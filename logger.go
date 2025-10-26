@@ -121,8 +121,9 @@ func Warn(msg string, args ...interface{}) {
 	logLine("warn", fmt.Sprintf(msg, args...), BgYellow, Black)
 }
 
-func Error(msg string, args ...interface{}) {
+func Error(msg string, args ...interface{}) error {
 	logLine("error", fmt.Sprintf(msg, args...), BgBrightRed, White)
+	return fmt.Errorf(msg, args...)
 }
 
 func Success(msg string, args ...interface{}) {
